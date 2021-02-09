@@ -3,14 +3,14 @@
 // ======================================================
 function func() {
   function innerfunc() {
-    console.log('coucou')
+    console.log('coucou');
   }
 
   innerfunc();
 }
 
 // marche pas
-innerfunc()
+innerfunc();
 
 // marche car func appelle innerfunc
 func();
@@ -20,16 +20,16 @@ func();
 // la visibilité des variables ne dépend que de leur imbrication à l'écriture du code
 // la visibilité des variables ne dépend pas du moment où est ecéxuté le code
 // ======================================================
-function func(p_message) {
+function func2(p_message) {
   let message = p_message;
   function innerfunc() {
-    console.log(message)
+    console.log(message);
   }
   innerfunc();
 }
 
 // affiche coucou
-func('coucou');
+func2('coucou');
 
 
 // ======================================================
@@ -39,26 +39,21 @@ func('coucou');
 // ======================================================
 function myWriterObj(prefixe) {
   function write(message) {
-    console.log(prefixe + ' : ' + message)
+    console.log(prefixe + ' : ' + message);
   }
   function writeTwice(message) {
-    console.log(prefixe + ' : ' + message)
-    console.log(prefixe + ' : ' + message)
+    console.log(prefixe + ' : ' + message);
+    console.log(prefixe + ' : ' + message);
   }
   return {
     write,
     writeTwice
-  }
+  };
 }
 
 // affiche coucou
 let writer = myWriterObj('yoann');
 // affiche "yoann : coucou"
-writer.write('coucou')
+writer.write('coucou');
 // affiche "yoann : double coucou" 2 fois
 writer.writeTwice('double coucou');
-
-
-// ======================================================
-// Closure
-// ======================================================
