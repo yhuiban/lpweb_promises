@@ -7,7 +7,11 @@ let sleep = function (millisec) {
 // simple sequential code
 async function main() {
   console.log('ASYNC: Step 1');
-  await sleep(1000);
+  try {
+  result = await sleep(1000);
+  } catch (error) {
+    console.error("il y a une erreur", error);
+  }
   console.log('ASYNC: Step 2');
   await sleep(2000);
   console.log('ASYNC: Step 3');
