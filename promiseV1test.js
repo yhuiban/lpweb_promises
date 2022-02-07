@@ -17,6 +17,7 @@ p.then(function (data) {
 });
 p.then(function (data) {
   console.log('PROMISE: Step 4');
-  p.resolve();
+  data = data + '\nPROMISE: Step 4'
+  p.resolve(data);
 });
 p.done();
