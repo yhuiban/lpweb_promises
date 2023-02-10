@@ -9,11 +9,11 @@ p.then(function (data) {
 });
 p.then(function (data) {
   console.log('PROMISE: Step 2');
-  p.resolve();
+  setTimeout(p.resolve, 2000);
 });
 p.then(function (data) {
   console.log('PROMISE: Step 3');
-  setTimeout(p.resolve, 2000);
+  p.resolve(data);
 });
 p.then(function (data) {
   console.log('PROMISE: Step 4');
